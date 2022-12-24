@@ -1,0 +1,177 @@
+.NavBarContainer{
+    margin: -10px;
+    padding: 0 10%;
+    border-top: 25px solid #c7c7c7;
+    background: #ffeb3b;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    .NavBaHomeText{
+        display: none;
+    }
+    img{
+        width: 60px;
+    }
+    ul{
+        margin: 0 0 0 30%;
+        list-style:none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1%;
+        font-size: 25px;
+        li{
+             color: black;
+             background: #ffeb3b;
+              display: block;
+              float: left;
+              padding: 0 12px;
+              position: relative;
+              text-decoration: none;
+            //   a{
+            //     font-size: 2222px;
+            //     text-decoration: none;
+            //     display: block;
+            //   }
+            button {
+                align-self: end;
+                margin: 6px -12px;
+                font-size: 20px;
+                border: none;
+                background-color: #ffeb3b;
+                border-radius: 25px;
+                color: none;
+                text-decoration: none;
+            }
+            button:hover{
+                margin: 6px -12px;
+                background: #fafafa;
+                border-radius: 25px;
+            }
+            ul{
+                display: block;
+                //  background: #ffeb3b;
+                 border-radius: 25px;
+                 visibility: hidden;
+                 float: right;
+                 min-width: 150px;
+                 position: absolute;
+                 transition: visibility 0.45s ease-in;
+                 margin-top:12px;
+                 right: 20px;
+                 z-index: 999;
+                 padding: 0;
+                li{
+                    box-shadow: 0px -8px 6px -3px rgba(199,199,199,1);
+                    border-bottom: 1px solid #c7c7c7;
+                    margin: 3px;
+                    border-radius: 25px;
+                 font-size: 20px;
+                 clear: both;
+                 padding: 5px 10px 5px 20px;
+                 width: 100%;    
+                }
+                li:hover{
+                    background: #fafafa;
+                }
+            }
+            ul:hover{
+                visibility: visible;
+            }
+        }
+        li:hover{
+            transition: background, 0.5s;
+            background: #fafafa;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        li:hover ul{
+            visibility: visible;
+        }
+    }
+}
+
+@media only screen and (max-width: 840px){
+    .NavBarContainer{
+        justify-content: flex-start;
+        .NavBaHomeText{
+            display: none;
+        }
+        ul{
+        font-size: 20px;
+        gap: none;
+        }
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 319px)  {
+    .NavBarContainer{
+        margin: 0p;
+        padding: 0;
+        justify-content: flex-start;
+        .NavBaHomeIcon{
+            display: none;
+        }
+        .NavBaHomeText{
+            display: inline;
+        }
+        ul{
+        margin: 0;
+        font-size: 10px;
+        gap: none;
+        li{
+             padding: 0 3px;
+           button {
+               align-self: flex-start;
+               font-size: 10px;
+               margin: 6px 0px;
+               padding: 0;
+           }
+           button:hover{
+            margin: 6px 0px;
+               padding: 0;
+           }
+           ul{
+               display: block;
+                border-radius: 25px;
+                visibility: hidden;
+                float: right;
+                min-width: 75px;
+                position: absolute;
+                transition: visibility 0.45s ease-in;
+                margin-top:12px;
+                right: 1px;
+                z-index: 999;
+                padding: 0;
+               li{
+                   box-shadow: 0px -8px 6px -3px rgba(199,199,199,1);
+                   border-bottom: 1px solid #c7c7c7;
+                   margin: 3px;
+                   border-radius: 25px;
+                font-size: 10px;
+                clear: both;
+                padding: 5px 10px 5px 6px;
+                width: 100%;    
+               }
+               li:hover{
+                   background: #fafafa;
+               }
+           }
+           ul:hover{
+               visibility: visible;
+           }
+       }
+       li:hover{
+           transition: background, 0.5s;
+           background: #fafafa;
+           border-radius: 25px;
+           cursor: pointer;
+       }
+       li:hover ul{
+           visibility: visible;
+       }}
+    }
+    
+}

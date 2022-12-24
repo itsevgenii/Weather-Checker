@@ -1,0 +1,47 @@
+.InputContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 30px 0;
+    padding: 0;
+    form{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        label{
+            font-size: 25px;
+        }
+        input{
+            margin-left: 50px;
+            padding: 75px 50px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border: none;
+            width: 75px;
+            transition: transform 2s;
+            transition: width 1s;
+            background: #ffeb3b;
+            border: 5px solid #c7c7c7;
+            font-size: 25px;
+        }
+        input:hover, input:focus{
+           
+        width: 150px;
+           transform:translateX(-30%)
+        }
+    button{
+        transition: transform 2s;
+        img{
+            width: 75px;
+        }
+    }
+    button:hover{
+        transform: rotate(90deg);
+    }
+}
+}
+.WeatherCard{
+    display: flex;
+}

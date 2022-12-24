@@ -1,0 +1,30 @@
+.DailyContainerPlus{
+    display: flex;
+    flex-flow:column wrap;
+.DailyContainer{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 80%;
+    margin: 25px auto;
+    img{
+        width: 25%;
+        height: auto;
+        object-fit: cover;
+    }
+    .currentFetch{
+        display: flex;
+        flex-flow: column wrap;
+        width: 40%;
+        align-items: center;
+        img{
+            width: 40%;
+            background: #ffeb3b;
+            // border-left: solid;
+            margin-left: 60%;
+            padding: 15px;
+            border-radius: 45%;
+        }
+    }
+}
+}
