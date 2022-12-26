@@ -1,0 +1,128 @@
+@media only screen and (min-width: 768px)  {
+.dailyWidgetAll{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .dailyWidgetCards{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+.dailyWidget{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    // width: 35%;
+    .dailyItem{
+        margin: 35px 0px 5px 12px;
+
+
+        .DailyParentCard{
+            padding: 15px;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 15px;
+            background: rgba(199, 199, 199, 0.2);
+            border-radius: 25px;
+            .DayName{
+                background-color: #ffeb3b;
+                border-radius: 25px;
+                height: 25px;
+                padding: 6px;
+            }
+            img{
+                width: 70px;
+                height: auto;
+                object-fit: cover;
+                
+            }
+            .DailyParentInfo{
+            gap: 15px;
+            display: flex;
+            flex-flow: column wrap;
+            margin-bottom: 20px;
+            label{
+                background: rgba(255, 255, 114, 1);
+                padding: 3px;
+                border-radius: 25px;
+            }
+            label:hover{
+                background: #ffeb3b;
+            }
+        }
+    }
+    .DailyParentCard:hover{
+        transform:scale(110%);
+        background: #c7c7c7;
+    }
+}
+
+}
+.HourlyParent{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 425px;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+}
+}
+@media only screen and (max-width: 768px) and (min-width: 450px)  {
+    .dailyWidgetAll{
+        display: flex;
+        flex-flow: column-reverse wrap;
+        justify-content: center;
+        .dailyWidgetCards{
+        display: flex;
+        justify-content: flex-start;
+        gap: 2px;
+        
+        }
+        .dailyWidget{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 5%;
+            .DailyParentCard{
+                padding: 15px;
+                display: flex;
+                flex-flow: row wrap;
+                gap: 5px;
+                background: rgba(199, 199, 199, 0.2);
+                border-radius: 25px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px){
+    .dailyWidgetAll{
+        display: flex;
+        flex-flow: column-reverse wrap;
+        justify-content: center;
+        .dailyWidgetCards{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        width: 375px;
+        gap: 2px;
+        }
+        .dailyWidget{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            // width: 5%;
+            .DailyParentCard{
+                padding: 15px;
+                display: flex;
+                flex-flow: row wrap;
+                gap: 5px;
+                background: rgba(199, 199, 199, 0.2);
+                border-radius: 25px;
+            }
+        }
+    }
+}

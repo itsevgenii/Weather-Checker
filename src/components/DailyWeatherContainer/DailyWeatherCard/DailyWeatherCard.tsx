@@ -12,8 +12,10 @@ type Props = {
   input: string
 }
 
+
+
 const DailyWeatherCard = (props: Props) : JSX.Element=> {
-  const [weatherData, setWeatherData] = useState();
+  const [weatherData, setWeatherData] : any = useState();
 
 const {
   location,
@@ -26,7 +28,7 @@ const {
     async function getWeather() {
       if (location) {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`
         );
         const json = await response.json();
 
@@ -36,7 +38,7 @@ const {
     getWeather();
   }, [location]);
 
-  const dayObject = {
+  const dayObject : any = {
     0: "Sunday",
     1: "Monday",
     2: "Tuesday",
@@ -59,17 +61,17 @@ const {
           ></img>
           <p className={DailyWeatherCardStyle.currentTemp}>
             Current temp:{" "}
-            {parseFloat(weatherData.main.temp - 273.15).toFixed(0)}
+            {Math.round(weatherData.main.temp)}
             &#176;
           </p>
           <p className={DailyWeatherCardStyle.maxTemp}>
             Max temp:{" "}
-            {parseFloat(weatherData.main.temp_max - 273.15).toFixed(0)}
+            {Math.ceil(weatherData.main.temp_max)}
             &#176;
           </p>
           <p className={DailyWeatherCardStyle.minTemp}>
             Min temp:{" "}
-            {parseFloat(weatherData.main.temp_min - 273.15).toFixed(0)}
+            {Math.floor(weatherData.main.temp_min)}
             &#176;
           </p>
           <p className={DailyWeatherCardStyle.humidity}>

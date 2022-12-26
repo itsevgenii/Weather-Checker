@@ -1,0 +1,58 @@
+@media only screen and (min-width: 768px)  {
+.AllPage{
+display: flex;
+flex-flow: column nowrap;
+align-items: center;
+.parent{
+display: flex;
+flex-flow: row nowrap;
+overflow-x: scroll;
+// width: 40%;
+min-width:320px ;
+max-width:768px;
+gap: 2%;
+::-webkit-scrollbar
+::-webkit-scrollbar-thumb
+.HourlyContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    background: rgba(199, 199, 199, 0.2);
+    padding: 12px;
+    border-radius: 25px;
+    margin: 0 5px;
+    .Time{
+        display: flex;
+        padding: 0 25px;
+        flex-flow: row nowrap ;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .Info{
+        display: flex;
+        flex-flow: row wrap;
+        // padding: 10 12px;
+        gap: 12px;
+    }
+}
+}
+}
+}
+@media only screen and (max-width: 768px) and (min-width: 319px)  {
+    .parent{
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+        max-width: 400px;
+        gap: 2%;
+        margin: 10px auto;
+        background: rgba(199, 199, 199, 0.2);
+        border-radius: 25px;
+        .HourlyContainer{
+            padding: 5px;
+        }
+        .HourlyContainer:hover{
+            background: rgba(255, 255, 114, 1);
+        }
+    }
+}

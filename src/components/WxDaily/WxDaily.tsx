@@ -23,7 +23,7 @@ const WxDaily = () => {
   //   console.log("API:", API_KEY);
   const [city, setCity] = useState("");
   const [icon, setIcon] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weather, setWeather] : any= useState();
   const [location, setLocation] = useState<Location | null>();
 
   function handleLocation(lat: number, lon: number) {
@@ -46,11 +46,11 @@ const WxDaily = () => {
         setCity(city);
       });
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
-        setWeather(parseFloat(data.main.temp - 273.15).toFixed(0));
+        setWeather(data.main.temp);
         setIcon(data.weather[0].icon);
       });
   };
@@ -71,7 +71,7 @@ const WxDaily = () => {
         <div className={WxDailyStyle.currentFetch}>
           <h1>
             I am like you in {city} and the weather here is{" "}
-            <span>{`temp: ${weather}C`}</span>
+            <span>{`temp: ${Math.round(weather)} C`}</span>
           </h1>
           <img
             src={`https://openweathermap.org/img/wn/${icon}@4x.png`}

@@ -1,6 +1,8 @@
 import React from 'react'
 import useFetch from '../fetchHook/useFetch'
 import shortid from 'shortid'
+import DailyStyle from './DailyWidget.module.scss'
+import Hourly from './Hourly/Hourly'
 
 
 type forecastType =  {
@@ -68,68 +70,58 @@ let d = new Date(b*1000)
 console.log(d, "this is d")
 
 var e = new Date();
-e.setHours(12,0,0,0);
+var r = e.setHours(12,0,0,0);
+var rInSeconds = Math.round(r/1000)
 
-console.log("this is today noon", e)
+console.log("this is today noon", r)
 
 
-let next = e.setDate(e.getDate() + 1);
-let nextString : string = next.toString();
+let plusOne = e.setDate(e.getDate() + 1);
+const plusOneSeconds = Math.round(plusOne / 1000)  
+let  plusTwo= e.setDate(e.getDate() + 1);
+const plusTwoSeconds = Math.round(plusTwo / 1000)  
+let plusThree = e.setDate(e.getDate() + 1);
+const plusThreeSeconds = Math.round(plusThree / 1000)  
+let plusFour = e.setDate(e.getDate() + 1);
+const plusFourSeconds = Math.round(plusFour / 1000)  
+let plusFive = e.setDate(e.getDate() + 1);
+const plusFiveSeconds = Math.round(plusFive / 1000)  
+let nextString : string = plusOne.toString();
 console.log("next noon", nextString);
 
 
+
+let filterFind = (el: any) =>{
+  console.log("Plus one", el.dt == plusOneSeconds, el.dt, plusOneSeconds)
+  console.log("Plus Two", el.dt == plusTwoSeconds, el.dt, plusTwoSeconds)
+  console.log("Plus Three", el.dt == plusThreeSeconds, el.dt, plusThreeSeconds)
+  console.log("Plus four", el.dt == plusFourSeconds, el.dt, plusFourSeconds)
+  console.log("Plus Five", el.dt == plusFiveSeconds, el.dt, plusFiveSeconds)
+  return el.dt === rInSeconds|| el.dt === plusOneSeconds || el.dt === plusTwoSeconds || el.dt === plusThreeSeconds || el.dt === plusFourSeconds || el.dt === plusFiveSeconds
+}
     const {forecast} = useFetch()
     return (
-        <div>
-    
-    {/* const data = [{"guid":"j5Dc9Z","courses":[{"id":3,"name":"foo"}]},{"guid":"a5gdfS","courses":[{"id":1,"name":"bar"},{"id":3,"name":"foo"}]},{"guid":"jHab6i","courses":[{"id":7,"name":"foobar"}]}];
-const courses = [1, 6, 3];
+      <div className={DailyStyle.dailyWidgetAll}>
+<div className={DailyStyle.dailyWidgetCards}>
 
-const r = data.filter(d => d.courses.every(c => courses.includes(c.id)));
-console.log(r); */}
+{data.list.filter(filterFind).map((item, i)=>(
 
-    
-{data.list.splice(0,7).map((item, i)=>(
-
-/* <li key={shortid.generate()}>Hi</li> */
-    <div className='daily-item' key={shortid.generate()}>
-        
-            <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather" className='icon-small'/>
-            <label className='day'>{forecastDays[i]} </label>
-            <label>{item.dt_txt}</label>
-            <label className='description'>{item.weather[0].description}</label>
-            <label className='min-max'>{Math.round(item.main.temp_min)}°C / {Math.round(item.main.temp_max)}°C</label>
-     <div className="daily-details-grid-item">
-      <label>Pressure:</label>
-      <label>{item.main.pressure}</label>
+<div key={shortid.generate()} className={DailyStyle.dailyWidget}>
+    <div className={DailyStyle.dailyItem} key={shortid.generate()}>
+        <div className={DailyStyle.DailyParentCard}>
+        <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather" className='icon-small'/>
+        <label className={DailyStyle.DayName}>{item.dt_txt}</label>
+        <div className={DailyStyle.DailyParentInfo}>
+        <label className='day'>{forecastDays[i]} </label>
+        <label className='min-max'>{Math.round(item.main.temp_min)}°C / {Math.round(item.main.temp_max)}°C </label>
+        <label className='description'>{item.weather[0].description + ' '}</label>
+        </div>
+        </div>
+        </div>
     </div>
-    <div className="daily-details-grid-item">
-      <label>Humidity:</label>
-      <label>{item.main.humidity}</label>
-    </div>
-    <div className="daily-details-grid-item">
-      <label>Clouds:</label>
-      <label>{item.clouds.all}%</label>
-    </div>
-    <div className="daily-details-grid-item">
-      <label>Wind speed:</label>
-      <label>{item.wind.speed} m/s</label>
-    </div>
-    <div className="daily-details-grid-item">
-      <label>Feels like:</label>
-      <label>{item.main.feels_like}°C</label>
-    </div>
-    <div className="daily-details-grid-item">
-      <label>Feels like:</label>
-      <label>{item.dt_txt}</label>
-    </div>
-
-    </div>
-
 ))}
-
-           
-
+</div>
+<Hourly data={data}/>
         </div>
    
     )

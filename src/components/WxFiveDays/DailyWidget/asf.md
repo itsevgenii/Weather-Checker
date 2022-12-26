@@ -1,5 +1,7 @@
 {data.list.splice(0,7).map((item, i)=>(
 
+{data.filter((time) => time.dt === next).every(noon => next.includes(noon.dt))).map((item,i)=>(
+
             /* <li key={shortid.generate()}>Hi</li> */
                 <div className='daily-item' key={shortid.generate()}>
                         <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather" className='icon-small'/>
@@ -34,4 +36,3 @@
                 </div>
 
             ))}
-
