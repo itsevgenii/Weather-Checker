@@ -28,7 +28,7 @@ const {
     async function getWeather() {
       if (location) {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`
+          `http://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${API_KEY}`
         );
         const json = await response.json();
 
