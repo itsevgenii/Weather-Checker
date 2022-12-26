@@ -15,7 +15,8 @@
             padding: 7px;
             margin: 2px;
             border-radius: 25px;
-            background: rgba(255, 255, 114, 1);
+            // background: rgba(255, 255, 114, 1);
+            background: rgb(227,152,28)
         }
         .location{
             font-size: 20px;
@@ -25,7 +26,8 @@
             margin: 0 auto;
         }
         h2:hover{
-            background: #ffeb3b;
+            // background: #ffeb3b;
+            background: rgb(227,152,28);
         }
     p{
         border-radius: 25px;
@@ -37,7 +39,8 @@
         color: black;
     }
     p:hover{
-        background: #ffeb3b;
+        // background: #ffeb3b;
+        background: rgb(227,152,28)
     }
 }
 .card:hover{
