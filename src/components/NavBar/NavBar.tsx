@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBarStyle from "./navbar.module.scss";
-import panda from "./icons8-panda-96.png";
+import satellite from "./icons8-satellites-96.png";
 import home from "./icons8-home-page-100.png";
 import AuthNav from "../AuthNav/AuthNav";
 import { NavLink } from "react-router-dom";
@@ -15,7 +15,7 @@ const NavBar = () => {
   } = useAuth0();
   return (
     <div className={NavBarStyle.NavBarContainer}>
-      <img className={NavBarStyle.NavBarLogo} src={panda} alt="logo" />
+      <img className={NavBarStyle.NavBarLogo} src={satellite} alt="logo" />
       <ul id="menu">
         <NavLink to="/">
           <li>
@@ -43,7 +43,7 @@ const NavBar = () => {
 
         {isAuthenticated && (
           <NavLink to="/contacts">
-            <li>ContactUs</li>
+            <li>Contacts</li>
           </NavLink>
         )}
         {!isAuthenticated && (

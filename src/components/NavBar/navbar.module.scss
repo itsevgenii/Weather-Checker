@@ -38,8 +38,9 @@
             //   }
             button {
                 align-self: end;
-                margin: 6px -12px;
-                font-size: 20px;
+                width: 109px;
+    /* margin: 6px -12px; */
+    font-size: 27px;
                 border: none;
                 background-color: rgb(246,215,62);
                 border-radius: 25px;
@@ -94,7 +95,7 @@
     }
 }
 
-@media only screen and (max-width: 840px){
+@media only screen and (max-width: 909px){
     .NavBarContainer{
         justify-content: flex-start;
         .NavBaHomeText{
@@ -102,14 +103,13 @@
         }
         ul{
         font-size: 20px;
+        margin: 0 auto;
         gap: none;
         }
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 319px)  {
     .NavBarContainer{
-        margin: 0;
-        padding: 0;
         justify-content: flex-start;
         width: 100vw;
         .NavBaHomeIcon{
@@ -119,15 +119,17 @@
             display: inline;
         }
         ul{
-        margin: 0 auto;
-        font-size: 10px;
-        gap: none;
-        li{
+            margin: 0 auto;
+            font-size: 10px;
+            gap: none;
+            li{
+            font-size: 12px;
              padding: 0 3px;
            button {
                align-self: flex-start;
                font-size: 10px;
-               margin: 6px 0px;
+               width: auto;
+            //    margin: 6px 0px;
                padding: 0;
            }
            button:hover{
@@ -139,7 +141,7 @@
                 border-radius: 25px;
                 visibility: hidden;
                 float: right;
-                min-width: 75px;
+                // min-width: 75px;
                 position: absolute;
                 transition: visibility 0.45s ease-in;
                 margin-top:12px;
@@ -149,7 +151,7 @@
                li{
                    box-shadow: 0px -8px 6px -3px rgba(199,199,199,1);
                    border-bottom: 1px solid #c7c7c7;
-                   margin: 3px;
+                //    margin: 3px;
                    border-radius: 25px;
                 font-size: 10px;
                 clear: both;
