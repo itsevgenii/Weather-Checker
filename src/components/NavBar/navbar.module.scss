@@ -16,7 +16,7 @@
         width: 60px;
     }
     ul{
-        margin: 0 0 0 30%;
+        // margin: 0 0 0 30%;
         list-style:none;
         display: flex;
         justify-content: flex-start;
@@ -39,7 +39,7 @@
             button {
                 align-self: end;
                 width: 109px;
-    /* margin: 6px -12px; */
+    margin: 6px -12px;
     font-size: 27px;
                 border: none;
                 background-color: rgb(246,215,62);
@@ -129,7 +129,7 @@
                align-self: flex-start;
                font-size: 10px;
                width: auto;
-            //    margin: 6px 0px;
+               margin: 0px 0px;
                padding: 0;
            }
            button:hover{
