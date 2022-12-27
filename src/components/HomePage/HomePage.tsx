@@ -45,7 +45,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className={homePageStyle.homePageRowThree}>
-        <img src={lastScreenshot} alt="What is lorem ipsum" />
+        <img className={homePageStyle.lastScreenshot} src={lastScreenshot} alt="What is lorem ipsum" />
         <div className={homePageStyle.homePageRowThreeText}>
         <div className={homePageStyle.imgParagraph}>
 
@@ -53,7 +53,7 @@ const HomePage = () => {
           I am a fun weather app. What is a
             description of weather? 
           </h1>
-          <img src={fun} alt="fun emoji" />
+          <img className={homePageStyle.emoji} src={fun} alt="fun emoji" />
 </div>
           <p>
             The app provides weather at your current location, current weather in the location of your choice and five days weather forecast split into daily and three hours slots for any location of your choice. (I was built on 27
