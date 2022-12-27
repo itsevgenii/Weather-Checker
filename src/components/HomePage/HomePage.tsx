@@ -47,18 +47,17 @@ const HomePage = () => {
       <div className={homePageStyle.homePageRowThree}>
         <img src={lastScreenshot} alt="What is lorem ipsum" />
         <div className={homePageStyle.homePageRowThreeText}>
+        <div className={homePageStyle.imgParagraph}>
+
           <h1>
-            <img src={fun} alt="fun emoji" />I am a fun weather app. What is a
-            description of weather?
+          I am a fun weather app. What is a
+            description of weather? 
           </h1>
+          <img src={fun} alt="fun emoji" />
+</div>
           <p>
-            Weather is the state of the atmosphere, including temperature,
-            atmospheric pressure, wind, humidity, precipitation, and cloud
-            cover. The daily forecast provides current, min and max temperature
-            for the location of your choice as well as humidity. wind speed and
-            direction. If you have any suggestions for improvement or
-            collaboration, check details on the contact page (I was built on 18
-            Dec 2022).
+            The app provides weather at your current location, current weather in the location of your choice and five days weather forecast split into daily and three hours slots for any location of your choice. (I was built on 27
+            Dec 2022).  © 2022 Evgenii Smazanovich
           </p>
         </div>
       </div>

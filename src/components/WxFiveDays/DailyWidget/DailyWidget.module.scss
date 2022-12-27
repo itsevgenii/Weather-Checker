@@ -18,14 +18,14 @@
 
 
         .DailyParentCard{
-            padding: 15px;
+            padding: 10px;
             display: flex;
             flex-flow: row wrap;
             gap: 15px;
             background: rgba(199, 199, 199, 0.2);
             border-radius: 25px;
             .DayName{
-                background-color: #ffeb3b;
+                background: rgb(246, 215, 62);
                 border-radius: 25px;
                 height: 25px;
                 padding: 6px;
@@ -43,11 +43,11 @@
             margin-bottom: 20px;
             label{
                 background: rgba(255, 255, 114, 1);
-                padding: 3px;
+                padding: 0 25px;
                 border-radius: 25px;
             }
             label:hover{
-                background: #ffeb3b;
+                background: rgb(246, 215, 62);
             }
         }
     }
